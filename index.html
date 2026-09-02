@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO Website Proposals — Casious Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --tier1: #64748b;
+      --tier2: #3b82f6;
+      --tier3: #a855f7;
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(34,197,94,0.15), transparent);
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(34,197,94,0.15);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 1rem;
+    }
+    .hero p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 0 4rem;
+    }
+    .tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .tier-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .tier-header {
+      padding: 1.75rem 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tier-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .tier-1 .tier-label { color: var(--tier1); }
+    .tier-2 .tier-label { color: var(--tier2); }
+    .tier-3 .tier-label { color: var(--tier3); }
+    .tier-header h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .tier-price {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.75rem;
+      color: var(--accent);
+    }
+    .tier-body { padding: 1.25rem 1.5rem; flex: 1; }
+    .tier-body ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .tier-body li {
+      padding: 0.4rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .tier-body li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .tier-footer {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.92; transform: scale(1.01); }
+    .btn-tier1 { background: var(--tier1); color: white; }
+    .btn-tier2 { background: var(--tier2); color: white; }
+    .btn-tier3 { background: var(--tier3); color: white; }
+    .compare {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      overflow-x: auto;
+    }
+    .compare h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--muted); font-weight: 500; }
+    td:first-child { color: var(--text); }
+    .yes { color: var(--accent); font-weight: 600; }
+    .no { color: #475569; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-badge">Website Proposal Preview</div>
+    <h1>Three Options for Casious Foundation</h1>
+    <p>Interactive prototypes for each package tier. Click any option below to explore the live demo. All content is placeholder — your real mission, photos, and copy will replace it.</p>
+  </header>
+
+  <main class="container">
+    <section class="tiers">
+      <article class="tier-card tier-1">
+        <div class="tier-header">
+          <div class="tier-label">Tier 1 — Starter</div>
+          <h2>Essential Presence</h2>
+        </div>
+        <div class="tier-body">
+          <ul>
+            <li>6 core pages</li>
+            <li>Clean template design</li>
+            <li>Mobile responsive</li>
+            <li>Contact form</li>
+            <li>Donate via external link</li>
+            <li>2–3 week delivery</li>
+          </ul>
+        </div>
+        <div class="tier-footer">
+          <a href="tier-1-starter/index.html" class="btn btn-tier1">View Starter Prototype →</a>
+        </div>
+      </article>
+
+      <article class="tier-card tier-2">
+        <div class="tier-header">
+          <div class="tier-label">Tier 2 — Professional</div>
+          <h2>Growth & Credibility</h2>
+        </div>
+        <div class="tier-body">
+          <ul>
+            <li>10+ custom-designed pages</li>
+            <li>Built-in donation form</li>
+            <li>Blog & news section</li>
+            <li>Impact statistics</li>
+            <li>Newsletter signup</li>
+            <li>CMS-ready structure</li>
+          </ul>
+        </div>
+        <div class="tier-footer">
+          <a href="tier-2-professional/index.html" class="btn btn-tier2">View Professional Prototype →</a>
+        </div>
+      </article>
+
+      <article class="tier-card tier-3">
+        <div class="tier-header">
+          <div class="tier-label">Tier 3 — Advanced</div>
+          <h2>Full Digital Platform</h2>
+        </div>
+        <div class="tier-body">
+          <ul>
+            <li>Everything in Professional</li>
+            <li>Multilingual (EN + local)</li>
+            <li>Volunteer application portal</li>
+            <li>Events calendar</li>
+            <li>Live impact dashboard</li>
+            <li>Annual report section</li>
+          </ul>
+        </div>
+        <div class="tier-footer">
+          <a href="tier-3-advanced/index.html" class="btn btn-tier3">View Advanced Prototype →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="compare">
+      <h3>Feature Comparison</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th>Professional</th>
+            <th>Advanced</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Core pages (Home, About, Programs, etc.)</td><td class="yes">6</td><td class="yes">10+</td><td class="yes">15+</td></tr>
+          <tr><td>Custom design</td><td class="no">Template</td><td class="yes">Yes</td><td class="yes">Premium</td></tr>
+          <tr><td>Mobile responsive</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Online donation form</td><td class="no">External link</td><td class="yes">Embedded</td><td class="yes">Full gateway</td></tr>
+          <tr><td>Blog / News</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Volunteer signup</td><td class="no">—</td><td class="no">Basic link</td><td class="yes">Full portal</td></tr>
+          <tr><td>Events calendar</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Multilingual</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Impact dashboard</td><td class="no">—</td><td class="yes">Static stats</td><td class="yes">Live metrics</td></tr>
+          <tr><td>Post-launch support</td><td class="no">—</td><td class="yes">1 month</td><td class="yes">3 months</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prepared for client review · Prototypes use placeholder content · Final site will use your branding, photos, and copy</p>
+  </footer>
+</body>
+</html>
