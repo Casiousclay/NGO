@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Casious Foundation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-bar"><div class="container top-bar-inner"><span>Secure giving · Full payment gateway</span><div class="lang-switch"><button class="lang-btn active" data-lang="en">English</button><button class="lang-btn" data-lang="sw">Kiswahili</button></div></div></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">C</span>Casious Foundation</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a>
+        <a href="impact.html">Impact</a><a href="events.html">Events</a><a href="volunteer.html">Volunteer</a>
+        <a href="report.html">Reports</a><a href="contact.html">Contact</a><a href="donate.html" class="nav-donate active">Donate</a>
+      </nav>
+    </div>
+  </header>
+  <div class="page-hero"><div class="container"><h1 class="lang-en">Give With Confidence</h1><h1 class="lang-sw">Changia kwa Ujasiri</h1><p class="lang-en">Full payment gateway · Stripe, PayPal, Mobile Money · Tax receipts auto-generated</p><p class="lang-sw">Lango kamili la malipo · Stripe, PayPal, Pesa ya Simu</p></div></div>
+  <section><div class="container donate-layout">
+    <div>
+      <h3 style="font-family:var(--font-display);margin-bottom:1.25rem;" class="lang-en">Your Impact</h3>
+      <h3 style="font-family:var(--font-display);margin-bottom:1.25rem;" class="lang-sw">Athari Yako</h3>
+      <div class="feature-card" style="margin-bottom:1rem;"><div class="feature-icon">🎒</div><h3>$25</h3><p>School supplies for 1 child for a full term</p></div>
+      <div class="feature-card" style="margin-bottom:1rem;"><div class="feature-icon">🏥</div><h3>$50</h3><p>Mobile clinic visit for an entire family</p></div>
+      <div class="feature-card"><div class="feature-icon">💼</div><h3>$250</h3><p>Micro-grant to launch a small business</p></div>
+    </div>
+    <form class="volunteer-form" style="max-width:none;" data-demo>
+      <h3 style="margin-bottom:1.25rem;">Make a Donation</h3>
+      <div class="amount-grid">
+        <button type="button" class="amount-btn" data-amount="25">$25</button>
+        <button type="button" class="amount-btn" data-amount="50">$50</button>
+        <button type="button" class="amount-btn" data-amount="100">$100</button>
+        <button type="button" class="amount-btn" data-amount="250">$250</button>
+        <button type="button" class="amount-btn" data-amount="500">$500</button>
+        <button type="button" class="amount-btn" data-amount="1000">$1,000</button>
+      </div>
+      <div class="form-group"><label>Custom Amount (USD)</label><input type="number" id="custom-amount" min="1"></div>
+      <div class="form-group"><label>Designate to Program</label><select><option>Where Most Needed</option><option>Education</option><option>Healthcare</option><option>Livelihoods</option><option>Specific Event</option></select></div>
+      <label class="checkbox-item" style="margin-bottom:1rem;"><input type="checkbox"> Make this a monthly recurring gift</label>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" required></div>
+        <div class="form-group"><label>Last Name</label><input type="text" required></div>
+      </div>
+      <div class="form-group"><label>Email (for receipt)</label><input type="email" required></div>
+      <div class="form-group"><label>Payment Method</label><select><option>Credit / Debit Card</option><option>PayPal</option><option>Mobile Money (M-Pesa)</option><option>Bank Transfer</option></select></div>
+      <div class="form-group"><label>Card Number</label><input type="text" placeholder="4242 4242 4242 4242"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM/YY"></div>
+        <div class="form-group"><label>CVC</label><input type="text" placeholder="123"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Complete Secure Donation</button>
+      <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:1rem;">🔒 256-bit SSL · Demo only · Tax-deductible receipt emailed instantly</p>
+    </form>
+  </div></section>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom"><span>&copy; 2026 Casious Foundation</span></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
